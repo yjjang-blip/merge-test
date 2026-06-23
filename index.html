@@ -8,30 +8,36 @@
   *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
   body{background:#0b1020;font-family:-apple-system,'Malgun Gothic',sans-serif;display:flex;justify-content:center;align-items:center;min-height:100vh}
   #frame{width:360px;max-width:100vw;background:#1b1733;border-radius:18px;padding:16px 16px 20px;position:relative;outline:none;transition:box-shadow .2s}
-  #frame.fever{box-shadow:0 0 0 3px #ED93B1,0 0 28px 4px rgba(237,147,177,.7)}
-  h2{color:#fff;font-size:18px;text-align:center}h2 span{color:#ED93B1}
+  #frame.fever{box-shadow:0 0 0 3px #9B4DE0,0 0 28px 4px rgba(155,77,224,.7)}
+  h2{color:#fff;font-size:18px;text-align:center}h2 span{color:#62C7E4}
   #sub{color:#CECBF6;font-size:11px;text-align:center;margin:3px 0 10px}
   #bar{display:flex;justify-content:space-between;gap:6px;margin-bottom:8px}
   .box{flex:1;background:#2C2C4A;border-radius:8px;padding:6px 4px;color:#fff;font-size:10.5px;text-align:center}
-  .box b{display:block;font-size:15px;color:#ED93B1;margin-top:1px}
-  #fevtxt{color:#ED93B1;font-size:10px;font-weight:800;text-align:center;height:13px;letter-spacing:1px}
+  .box b{display:block;font-size:15px;color:#62C7E4;margin-top:1px}
+  #fevtxt{color:#9B4DE0;font-size:10px;font-weight:800;text-align:center;height:13px;letter-spacing:1px}
   #fevwrap{height:8px;background:#2C2C4A;border-radius:5px;margin-bottom:10px;overflow:hidden}
-  #fev{height:100%;width:0;background:#ED93B1;border-radius:5px;transition:width .15s}
+  #fev{height:100%;width:0;background:#9B4DE0;border-radius:5px;transition:width .15s}
   #gwrap{position:relative;width:100%;aspect-ratio:1/1}
   #grid{position:absolute;inset:0;background:#13102a;border-radius:12px;padding:8px;display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(4,1fr);gap:8px;touch-action:none}
   .cell{background:#221d3d;border-radius:8px}
   .tile{border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-weight:800;color:#fff;font-size:12px;line-height:1.12;padding:3px}
   .tile small{font-size:8.5px;font-weight:700;opacity:.75}
+  .tile.spot{position:relative;z-index:7;box-shadow:0 0 0 3px #fff,0 0 18px 6px rgba(98,199,228,.85)}
   .arrow{position:absolute;color:#fff;opacity:.3;font-size:22px;font-weight:900;pointer-events:none;animation:ap 1.3s infinite}
   @keyframes ap{0%,100%{opacity:.16}50%{opacity:.48}}
   #arU{top:0;left:50%;transform:translateX(-50%)}#arD{bottom:0;left:50%;transform:translateX(-50%)}
   #arL{left:0;top:50%;transform:translateY(-50%)}#arR{right:0;top:50%;transform:translateY(-50%)}
   .arrows.hide .arrow{opacity:0;transition:opacity .4s}
-  #toast{position:absolute;top:42%;left:50%;transform:translate(-50%,-50%);background:#26215C;border:1px solid #ED93B1;color:#fff;font-size:13px;font-weight:800;padding:10px 16px;border-radius:10px;opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;z-index:8;white-space:nowrap}
+  #tut{position:absolute;inset:0;background:rgba(8,10,20,.74);border-radius:12px;z-index:6;display:none}
+  #tutbox{position:absolute;top:12px;left:50%;transform:translateX(-50%);background:#fff;color:#1b1733;font-size:13.5px;font-weight:800;padding:11px 14px;border-radius:10px;z-index:8;display:none;text-align:center;width:88%;line-height:1.45;box-shadow:0 6px 20px rgba(0,0,0,.45)}
+  #tutarrow{position:absolute;left:50%;top:72%;font-size:48px;color:#62C7E4;font-weight:900;z-index:8;display:none;text-shadow:0 0 14px rgba(98,199,228,.9);animation:tla 1s infinite}
+  @keyframes tla{0%,100%{transform:translate(-25%,-50%)}50%{transform:translate(-80%,-50%)}}
+  #tutskip{position:absolute;bottom:8px;right:8px;background:rgba(255,255,255,.14);color:rgba(255,255,255,.85);border:1px solid rgba(255,255,255,.35);border-radius:7px;font-size:10px;font-weight:600;padding:4px 8px;z-index:9;display:none}
+  #toast{position:absolute;top:42%;left:50%;transform:translate(-50%,-50%);background:#26215C;border:1px solid #62C7E4;color:#fff;font-size:13px;font-weight:800;padding:10px 16px;border-radius:10px;opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;z-index:10;white-space:nowrap}
   #toast.show{opacity:1;transform:translate(-50%,-60%)}
   #legend{color:#9FE1CB;font-size:10px;text-align:center;margin-top:10px}
-  #ov{position:absolute;inset:0;background:rgba(11,16,32,.93);border-radius:18px;display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;color:#fff;z-index:10}
-  #ov h1{font-size:21px;margin-bottom:8px}#ov h1 span{color:#ED93B1}
+  #ov{position:absolute;inset:0;background:rgba(11,16,32,.93);border-radius:18px;display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;color:#fff;z-index:11}
+  #ov h1{font-size:21px;margin-bottom:8px}#ov h1 span{color:#9B4DE0}
   #ov p{font-size:13px;color:#CECBF6;margin-bottom:14px;line-height:1.6}
   #ov button{background:#fff;color:#1b1733;border:none;border-radius:10px;padding:11px 24px;font-size:14px;font-weight:800;margin:4px}
 </style>
@@ -50,6 +56,10 @@
   <div id="gwrap">
     <div id="grid"></div>
     <div class="arrows" id="arrows"><span class="arrow" id="arU">▲</span><span class="arrow" id="arD">▼</span><span class="arrow" id="arL">◀</span><span class="arrow" id="arR">▶</span></div>
+    <div id="tut"></div>
+    <div id="tutbox"></div>
+    <div id="tutarrow">◀</div>
+    <button id="tutskip">건너뛰기</button>
     <div id="toast"></div>
   </div>
   <div id="legend">연속으로 합치면 FEVER! (5턴간 점수 2배)</div>
@@ -61,18 +71,26 @@ var COLOR=['','#F1E9D8','#45C2A0','#62C7E4','#3E9BD6','#3B82C4','#2266AD','#2A3C
 var TXT=['','#5b5446','#ffffff','#08394a','#ffffff','#ffffff','#ffffff','#ffffff','#ffffff','#ffffff','#ffffff'];
 var MONEY=[0,0,500,1000,2500,4000,5500,7000,8000,9000,10000];
 var MAX=10;
-var board,score,won,prevMax,fever,feverMoves,gauge,firstMove;
+var board,score,won,prevMax,fever,feverMoves,gauge,firstMove,tutorial,tutDir;
 var grid=document.getElementById('grid'),scoreEl=document.getElementById('score'),moneyEl=document.getElementById('money'),bestEl=document.getElementById('best');
 var ov=document.getElementById('ov'),fr=document.getElementById('frame'),fev=document.getElementById('fev'),fevtxt=document.getElementById('fevtxt'),toastEl=document.getElementById('toast'),arrows=document.getElementById('arrows');
-function newGame(){board=[[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]];score=0;won=false;prevMax=1;fever=false;feverMoves=0;gauge=0;firstMove=false;ov.style.display='none';arrows.className='arrows';fr.classList.remove('fever');addTile();addTile();render();updateFev();}
+var tut=document.getElementById('tut'),tutbox=document.getElementById('tutbox'),tutarrow=document.getElementById('tutarrow'),tutskip=document.getElementById('tutskip');
+function zeros(){return [[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]];}
+function resetState(){score=0;won=false;prevMax=1;fever=false;feverMoves=0;gauge=0;firstMove=false;ov.style.display='none';fr.classList.remove('fever');}
+function newGame(){resetState();board=zeros();tutorial=true;tutDir='left';board[3][1]=1;board[3][2]=1;arrows.className='arrows hide';render();showTut();updateFev();}
+function startReal(){resetState();board=zeros();tutorial=false;hideTut();arrows.className='arrows';addTile();addTile();render();updateFev();}
+function showTut(){tut.style.display='block';tutbox.style.display='block';tutbox.innerHTML='같은 혜택 2개를 <b style="color:#185FA5">왼쪽 ◀</b> 으로 밀어 합쳐보세요!';tutarrow.style.display='block';tutskip.style.display='block';}
+function hideTut(){tut.style.display='none';tutbox.style.display='none';tutarrow.style.display='none';tutskip.style.display='none';}
 function addTile(){var e=[];for(var r=0;r<4;r++)for(var c=0;c<4;c++)if(!board[r][c])e.push([r,c]);if(!e.length)return;var p=e[(Math.random()*e.length)|0];board[p[0]][p[1]]=Math.random()<0.9?1:2;}
 function maxTile(){var m=0;for(var r=0;r<4;r++)for(var c=0;c<4;c++)if(board[r][c]>m)m=board[r][c];return m;}
-function render(){grid.innerHTML='';for(var r=0;r<4;r++)for(var c=0;c<4;c++){var v=board[r][c];var d=document.createElement('div');if(v){d.className='tile';d.style.background=COLOR[v];d.style.color=TXT[v];d.innerHTML='<small>'+v+'단계</small>'+LABEL[v];if(LABEL[v].length>=6)d.style.fontSize='11px';}else d.className='cell';grid.appendChild(d);}var mt=maxTile();scoreEl.textContent=score.toLocaleString();moneyEl.textContent=MONEY[mt].toLocaleString()+'원';bestEl.textContent=mt+'단계';}
+function render(){grid.innerHTML='';for(var r=0;r<4;r++)for(var c=0;c<4;c++){var v=board[r][c];var d=document.createElement('div');if(v){d.className='tile'+(tutorial&&r===3&&(c===1||c===2)?' spot':'');d.style.background=COLOR[v];d.style.color=TXT[v];d.innerHTML='<small>'+v+'단계</small>'+LABEL[v];if(LABEL[v].length>=6)d.style.fontSize='11px';}else d.className='cell';grid.appendChild(d);}var mt=maxTile();scoreEl.textContent=score.toLocaleString();moneyEl.textContent=MONEY[mt].toLocaleString()+'원';bestEl.textContent=mt+'단계';}
 function updateFev(){fev.style.width=(fever?100:gauge)+'%';if(fever){fevtxt.textContent='FEVER! 점수 2배 ('+feverMoves+'턴)';fr.classList.add('fever');}else{fevtxt.textContent='';fr.classList.remove('fever');}}
 function toast(t){toastEl.textContent=t;toastEl.classList.add('show');clearTimeout(toastEl._t);toastEl._t=setTimeout(function(){toastEl.classList.remove('show');},1100);}
 function slide(line){var a=line.filter(function(v){return v;});var res=[],g=0,m=0;for(var i=0;i<a.length;i++){if(a[i]===a[i+1]&&a[i]<MAX){var nt=a[i]+1;res.push(nt);g+=Math.pow(2,nt);m++;if(nt===MAX)won=true;i++;}else res.push(a[i]);}while(res.length<4)res.push(0);var moved=false;for(var k=0;k<4;k++)if(res[k]!==line[k])moved=true;return{res:res,g:g,moved:moved,m:m};}
 function transpose(b){var t=[[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]];for(var r=0;r<4;r++)for(var c=0;c<4;c++)t[c][r]=b[r][c];return t;}
-function move(dir){var b=board.map(function(r){return r.slice();});var v=(dir==='up'||dir==='down');if(v)b=transpose(b);var rev=(dir==='right'||dir==='down');var moved=false,base=0,mc=0;for(var r=0;r<4;r++){var row=b[r];if(rev)row.reverse();var s=slide(row);if(rev)s.res.reverse();b[r]=s.res;base+=s.g;mc+=s.m;if(s.moved)moved=true;}if(v)b=transpose(b);
+function move(dir){
+ if(tutorial){if(dir!==tutDir){toast('왼쪽 ◀ 으로 밀어보세요');return;}tutorial=false;hideTut();arrows.className='arrows hide';}
+ var b=board.map(function(r){return r.slice();});var v=(dir==='up'||dir==='down');if(v)b=transpose(b);var rev=(dir==='right'||dir==='down');var moved=false,base=0,mc=0;for(var r=0;r<4;r++){var row=b[r];if(rev)row.reverse();var s=slide(row);if(rev)s.res.reverse();b[r]=s.res;base+=s.g;mc+=s.m;if(s.moved)moved=true;}if(v)b=transpose(b);
  if(!moved)return;
  if(!firstMove){firstMove=true;arrows.className='arrows hide';}
  var feverNow=fever;score+=base*(feverNow?2:1);board=b;addTile();
@@ -83,13 +101,14 @@ function move(dir){var b=board.map(function(r){return r.slice();});var v=(dir===
  updateFev();check();}
 function canMove(){for(var r=0;r<4;r++)for(var c=0;c<4;c++){if(!board[r][c])return true;if(c<3&&board[r][c]===board[r][c+1])return true;if(r<3&&board[r][c]===board[r+1][c])return true;}return false;}
 function check(){if(won){won=false;over('<h1><span>카드 발급</span> 완성!</h1><p>10단계 달성! 예상 모니머니 '+MONEY[10].toLocaleString()+'원<br>점수 '+score.toLocaleString()+'점</p><button onclick="hideOv()">계속하기</button><button onclick="newGame()">새 게임</button>');return;}
- if(!canMove()){var mt=maxTile();over('<h1>게임 종료</h1><p>최고 '+mt+'단계 · '+LABEL[mt]+'<br>예상 모니머니 <b style="color:#ED93B1">'+MONEY[mt].toLocaleString()+'원</b><br>점수 '+score.toLocaleString()+'점</p><p style="font-size:12px">친구를 초대하면 이어서 도전할 수 있어요.</p><button onclick="newGame()">다시 시작</button>');}}
+ if(!canMove()){var mt=maxTile();over('<h1>게임 종료</h1><p>최고 '+mt+'단계 · '+LABEL[mt]+'<br>예상 모니머니 <b style="color:#9B4DE0">'+MONEY[mt].toLocaleString()+'원</b><br>점수 '+score.toLocaleString()+'점</p><p style="font-size:12px">친구를 초대하면 이어서 도전할 수 있어요.</p><button onclick="newGame()">다시 시작</button>');}}
 function over(html){ov.innerHTML=html;ov.style.display='flex';}
 function hideOv(){ov.style.display='none';}
 var sx,sy;
 grid.addEventListener('pointerdown',function(e){sx=e.clientX;sy=e.clientY;});
 grid.addEventListener('pointerup',function(e){if(sx==null)return;var dx=e.clientX-sx,dy=e.clientY-sy;sx=null;if(Math.abs(dx)<18&&Math.abs(dy)<18)return;if(Math.abs(dx)>Math.abs(dy))move(dx>0?'right':'left');else move(dy>0?'down':'up');});
 fr.addEventListener('keydown',function(e){var k={ArrowLeft:'left',ArrowRight:'right',ArrowUp:'up',ArrowDown:'down'}[e.key];if(k){e.preventDefault();move(k);}});
+tutskip.addEventListener('click',startReal);
 newGame();fr.focus();
 </script>
 </body>
